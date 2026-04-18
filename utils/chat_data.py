@@ -1,15 +1,17 @@
 import socket
 
-server = "irc.chat.twitch.tv"
-port = 6667
-nickname = "justinfan30469"
-token = "oauth:SCHMOOPIIE"  # Default Token
-channel = "#marlon"
-     
+
 def getChat():
     # Initialize Socket
+    server = "irc.chat.twitch.tv"
+    port = 6667
+
     sock = socket.socket()
     sock.connect((server, port))
+
+    nickname = "justinfan30469"
+    token = "oauth:SCHMOOPIIE"
+    channel = "#gofns"
 
     # Authenticate and Join
     sock.send(f"PASS {token}\n".encode("utf-8"))
